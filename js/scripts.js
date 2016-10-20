@@ -12,6 +12,7 @@ var michonneScore;
 var rickScore;
 var morganScore;
 var carolScore;
+var coralScore;
 
 var name;
 var weapon;
@@ -29,13 +30,50 @@ var charReset = function() {
   coralScore = 0;
 };
 
-var charNameString;
 var charScoring = function(charName) {
+  var charScore = 0;
+
   if (weapon === charName) {
     charScore = charScore + 1;
-  } else {
+  } else {};
 
-  }
+  if (job === charName) {
+    charScore = charScore + 1;
+  } else {};
+
+  if (personality === "badass") {
+    charScore = charScore + 1;
+  } else {};
+
+  if (colorFlavor === charName) {
+    charScore = charScore + 1;
+  } else {};
+
+  if (charName === "glenn") {
+    glennScore = charScore;
+  } else if (charName === "daryl") {
+    darylScore = charScore;
+  } else if (charName === "michonne") {
+    michonneScore = charScore;
+      if (job === "house-spouse") {
+        michonneScore = michonneScore + 1;
+      } else {};
+  } else if (charName === "rick") {
+    rickScore = charScore;
+  } else if (charName === "morgan") {
+    morganScore = charScore;
+  } else if (charName === "carol") {
+    carolScore = charScore;
+      if (job === "house-spouse") {
+        carolScore = carolScore + 1;
+      } else {};
+  } else if (charName === "coral") {
+    coralScore = charScore;
+    coralScore = coralScore - 1;
+      if (personality === "coral") {
+        coralScore = corallScore + 10;
+      } else {}
+  } else {};
 };
 
 $(document).ready(function(){
@@ -48,7 +86,14 @@ $(document).ready(function(){
 
     charReset();
 
-    charScore(glenn);
+    charScoring(glenn);
+    charScoring(daryl);
+    charScoring(michonne);
+    charScoring(rick);
+    charScoring(morgan);
+    charScoring(carol);
+    charScoring(coral);
+
 
     event.preventDefault();
   });
