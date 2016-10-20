@@ -1,76 +1,54 @@
-var glenn;
-var daryl;
-var michonne;
-var rick;
-var morgan;
-var carol;
-var coral;
+var glenn = "glenn";
+var daryl = "daryl";
+var michonne = "michonne";
+var rick = "rick";
+var morgan = "morgan";
+var carol = "carol";
+var coral = "coral";
+
+var glennScore;
+var darylScore;
+var michonneScore;
+var rickScore;
+var morganScore;
+var carolScore;
+
+var name;
+var weapon;
+var job;
+var personality;
+var colorFlavor;
+
+var charReset = function() {
+  glennScore = 0;
+  darylScore = 0;
+  michonneScore = 0;
+  rickScore = 0;
+  morganScore = 0;
+  carolScore = 0;
+  coralScore = 0;
+};
+
+var charNameString;
+var charScoring = function(charName) {
+  if (weapon === charName) {
+    charScore = charScore + 1;
+  } else {
+
+  }
+};
 
 $(document).ready(function(){
-  $("#political-beliefs").submit(function(event){
-    var name = $("#name").val();
-    var weapon = $("input:radio[name=weapon]:checked").val();
-    var animal = $("input:radio[name=animal]:checked").val();
-    var flavor = $("input:radio[name=flavor]:checked").val();
-    var communication = $("input:radio[name=communication]:checked").val();
-    unicornParty = 0;
-    dogParty = 0;
+  $("#walking-dead").submit(function(event){
+    name = $("#name").val();
+    weapon = $("input:radio[name=weapon]:checked").val();
+    job = $("input:radio[name=job]:checked").val();
+    personality = $("input:radio[name=personality]:checked").val();
+    colorFlavor = $("input:radio[name=color-flavor]:checked").val();
 
-    if(color === "blue") {
-      unicornParty = unicornParty + 1;
-    } else {
-      dogParty = dogParty + 1;
-    }
+    charReset();
 
-    if(animal === "donkey") {
-      unicornParty = unicornParty + 1;
-    } else {
-      dogParty = dogParty + 1;
-    }
-
-    if(flavor === "strawberry") {
-      unicornParty = unicornParty + 1;
-    } else {
-      dogParty = dogParty + 1;
-    }
-
-    if(communication === "calling") {
-      unicornParty = unicornParty + 1;
-    } else {
-      dogParty = dogParty + 1;
-    }
-
-    if(userAge != NaN && userAge < 18) {
-      $("#helpBlock1").show();
-      $("#helpBlock1").text("You must be older than 18.");
-    } else if(userAge >= 18) {
-      $("#helpBlock1").hide();
-    } else{
-      $("#helpBlock1").show();
-      $("#helpBlock1").text("You must enter your age as a number.");
-    };
-
-    if(buttonColor != "blue") {
-      $("#helpBlock2").show();
-      $("#helpBlock2").text("Try again!");
-    } else {
-      $("#helpBlock2").hide();
-    };
-
-    if(userAge >= 18 && buttonColor === "blue") {
-      if(unicornParty > dogParty) {
-        $(".results-show").show();
-        $(".party-body").text("Unicorn Party");
-      } else if(unicornParty < dogParty) {
-        $(".results-show").show();
-        $(".party-body").text("Dog Party");
-      } else {
-        $(".results-show").show();
-        $(".party-body").text("Neither, you are a moderate.");
-      }
-    } else {
-      $(".results-show").hide();
-    }
+    charScore(glenn);
 
     event.preventDefault();
   });
