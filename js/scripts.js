@@ -94,6 +94,7 @@ $(document).ready(function(){
     charScoring(carol);
     charScoring(coral);
 
+    alert("You're Coral! Mom's dead, Coral!!! -Rick (You're Coral/Carl if you didn't understand that.)");
 
     event.preventDefault();
   });
