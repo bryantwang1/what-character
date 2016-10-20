@@ -1,11 +1,15 @@
-var unicornParty;
-var dogParty;
+var glenn;
+var daryl;
+var michonne;
+var rick;
+var morgan;
+var carol;
+var coral;
 
 $(document).ready(function(){
   $("#political-beliefs").submit(function(event){
-    var userAge = parseInt($("#age").val())
-    var buttonColor = $("#btn-color").val().toLowerCase();
-    var color = $("input:radio[name=color]:checked").val();
+    var name = $("#name").val();
+    var weapon = $("input:radio[name=weapon]:checked").val();
     var animal = $("input:radio[name=animal]:checked").val();
     var flavor = $("input:radio[name=flavor]:checked").val();
     var communication = $("input:radio[name=communication]:checked").val();
